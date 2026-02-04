@@ -1,0 +1,20 @@
+{
+  "article": {
+    "id": "#number",
+    "slug": "#string",
+    "title": "#string",
+    "description": "#string",
+    "body": "#string",
+    "tagList": "#array",
+    "favorited": true,
+    "favoritesCount": "#number",
+    "author": {
+      "username": "#string",
+      "bio": "#",
+      "image": "#string",
+      "following": "#boolean"
+    },
+    "createdAt": "#string",
+    "updatedAt": "#string"
+  }
+}

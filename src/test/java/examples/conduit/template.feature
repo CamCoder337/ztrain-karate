@@ -28,6 +28,8 @@ Feature: Home Work
             * match response.response.article.favoritesCount == initialCount + 1
 
         # Step 6: Get all favorited articles on articles object
+        * def articles = call read('get-article.feature')
+        * def articles = articles.response.articles
         * def favoritedArticles = articles.filter(article => article.favorited == true)
 
         # Step 7: Verify response schema

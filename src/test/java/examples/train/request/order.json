@@ -1,0 +1,17 @@
+{
+    "user_id": "",
+    "address": "12 rue de la Paix, 75000 Paris",
+    "card": {
+        "number": 4000000000001091,
+        "exp_month": 12,
+        "exp_year": 2028,
+        "cvc": "123"
+    },
+    "products": [
+        {
+            "product": {},
+            "quantity": 3
+        }
+    ],
+    "shipping_method": "627ce1b06ba58352b9229552"
+}

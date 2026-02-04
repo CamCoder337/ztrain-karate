@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-2-thread-1","id":1},{"content":"pool-2-thread-2","id":2},{"content":"pool-2-thread-3","id":3},{"content":"pool-2-thread-4","id":4},{"content":"pool-2-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/train\/addComment[1:8]","start":1770199343221,"end":1770199352886,"title":"examples\/train\/addComment[1:8] 11:02:23.221-11:02:32.886 Add a comment to a product"},{"id":2,"group":2,"content":"examples\/train\/addToCart[1:8]","start":1770199343221,"end":1770199353685,"title":"examples\/train\/addToCart[1:8] 11:02:23.221-11:02:33.685 Add a product to cart"},{"id":3,"group":3,"content":"examples\/train\/addToFavorite[1:8]","start":1770199343221,"end":1770199352642,"title":"examples\/train\/addToFavorite[1:8] 11:02:23.221-11:02:32.642 Add a product to favorites"},{"id":4,"group":4,"content":"examples\/train\/createCategory[1:12]","start":1770199343221,"end":1770199348622,"title":"examples\/train\/createCategory[1:12] 11:02:23.221-11:02:28.622 Create a new category"},{"id":5,"group":5,"content":"examples\/train\/createProduct[1:13]","start":1770199343221,"end":1770199348714,"title":"examples\/train\/createProduct[1:13] 11:02:23.221-11:02:28.714 Create product with dynamic name"},{"id":6,"group":4,"content":"examples\/train\/createShippingMethod[1:12]","start":1770199348633,"end":1770199352765,"title":"examples\/train\/createShippingMethod[1:12] 11:02:28.633-11:02:32.765 Create a new shipping method"},{"id":7,"group":5,"content":"examples\/train\/submitOrder[1:9]","start":1770199348722,"end":1770199359544,"title":"examples\/train\/submitOrder[1:9] 11:02:28.722-11:02:39.544 Create product, add to cart, and submit order"},{"id":8,"group":3,"content":"examples\/train\/train[1:7]","start":1770199352650,"end":1770199353976,"title":"examples\/train\/train[1:7] 11:02:32.650-11:02:33.976 Create a product"},{"id":9,"group":4,"content":"examples\/train\/trainLogin[1:7]","start":1770199352771,"end":1770199354504,"title":"examples\/train\/trainLogin[1:7] 11:02:32.771-11:02:34.504 Login and get token"},{"id":10,"group":1,"content":"examples\/train\/updateCartQuantity[1:8]","start":1770199352899,"end":1770199361507,"title":"examples\/train\/updateCartQuantity[1:8] 11:02:32.899-11:02:41.507 Update quantity to 3 in cart"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

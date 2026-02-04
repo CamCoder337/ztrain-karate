@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-2-thread-1","id":1},{"content":"pool-2-thread-2","id":2},{"content":"pool-2-thread-3","id":3}];
+var items = [{"id":1,"group":1,"content":"examples\/login\/login[1:7]","start":1770110599874,"end":1770110603041,"title":"examples\/login\/login[1:7] 10:23:19.874-10:23:23.041 Login user with valid credentials","className":"failed"},{"id":2,"group":2,"content":"examples\/login\/login[2:17]","start":1770110599874,"end":1770110603029,"title":"examples\/login\/login[2:17] 10:23:19.874-10:23:23.029 Login user with invalid credentials","className":"failed"},{"id":3,"group":3,"content":"examples\/users\/users[1:11]","start":1770110599874,"end":1770110603040,"title":"examples\/users\/users[1:11] 10:23:19.874-10:23:23.040 Create a wishlist"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

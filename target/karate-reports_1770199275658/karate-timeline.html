@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/train\/addComment[1:8]","start":1770197248644,"end":1770197252749,"title":"examples\/train\/addComment[1:8] 10:27:28.644-10:27:32.749 Add a comment to a product","className":"failed"},{"id":2,"group":1,"content":"examples\/train\/addToCart[1:8]","start":1770197253738,"end":1770197257220,"title":"examples\/train\/addToCart[1:8] 10:27:33.738-10:27:37.220 Add a product to cart","className":"failed"},{"id":3,"group":1,"content":"examples\/train\/addToFavorite[1:8]","start":1770197257508,"end":1770197260823,"title":"examples\/train\/addToFavorite[1:8] 10:27:37.508-10:27:40.823 Add a product to favorites","className":"failed"},{"id":4,"group":1,"content":"examples\/train\/createCategory[1:12]","start":1770197261134,"end":1770197263349,"title":"examples\/train\/createCategory[1:12] 10:27:41.134-10:27:43.349 Create a new category"},{"id":5,"group":1,"content":"examples\/train\/createProduct[1:13]","start":1770197263469,"end":1770197265634,"title":"examples\/train\/createProduct[1:13] 10:27:43.469-10:27:45.634 Create product with dynamic name","className":"failed"},{"id":6,"group":1,"content":"examples\/train\/createShippingMethod[1:12]","start":1770197265750,"end":1770197268818,"title":"examples\/train\/createShippingMethod[1:12] 10:27:45.750-10:27:48.818 Create a new shipping method","className":"failed"},{"id":7,"group":1,"content":"examples\/train\/submitOrder[1:9]","start":1770197268899,"end":1770197272444,"title":"examples\/train\/submitOrder[1:9] 10:27:48.899-10:27:52.444 Create product, add to cart, and submit order","className":"failed"},{"id":8,"group":1,"content":"examples\/train\/train[1:7]","start":1770197272669,"end":1770197273872,"title":"examples\/train\/train[1:7] 10:27:52.669-10:27:53.872 Create a product"},{"id":9,"group":1,"content":"examples\/train\/trainLogin[1:7]","start":1770197273926,"end":1770197275084,"title":"examples\/train\/trainLogin[1:7] 10:27:53.926-10:27:55.084 Login and get token"},{"id":10,"group":1,"content":"examples\/train\/updateCartQuantity[1:8]","start":1770197275122,"end":1770197278484,"title":"examples\/train\/updateCartQuantity[1:8] 10:27:55.122-10:27:58.484 Update quantity to 3 in cart","className":"failed"},{"id":11,"group":1,"content":"examples\/train\/ztrain\/features\/add2Favorite[1:13]","start":1770197280921,"end":1770197280948,"title":"examples\/train\/ztrain\/features\/add2Favorite[1:13] 10:28:00.921-10:28:00.948 Add to favorites","className":"failed"},{"id":12,"group":1,"content":"examples\/train\/ztrain\/features\/addComment[1:15]","start":1770197281053,"end":1770197281106,"title":"examples\/train\/ztrain\/features\/addComment[1:15] 10:28:01.053-10:28:01.106 Add a comment to a product","className":"failed"},{"id":13,"group":1,"content":"examples\/train\/ztrain\/features\/createNewCategory[1:21]","start":1770197281338,"end":1770197281343,"title":"examples\/train\/ztrain\/features\/createNewCategory[1:21] 10:28:01.338-10:28:01.343 Create a new category","className":"failed"},{"id":14,"group":1,"content":"examples\/train\/ztrain\/features\/createNewProduct[1:23]","start":1770197281451,"end":1770197281469,"title":"examples\/train\/ztrain\/features\/createNewProduct[1:23] 10:28:01.451-10:28:01.469 create a new product","className":"failed"},{"id":15,"group":1,"content":"examples\/train\/ztrain\/features\/createNewShippingMethod[1:21]","start":1770197281557,"end":1770197281562,"title":"examples\/train\/ztrain\/features\/createNewShippingMethod[1:21] 10:28:01.557-10:28:01.562 Create a new shipping method","className":"failed"},{"id":16,"group":1,"content":"examples\/train\/ztrain\/features\/loginUser[1:10]","start":1770197281688,"end":1770197283019,"title":"examples\/train\/ztrain\/features\/loginUser[1:10] 10:28:01.688-10:28:03.019 Login User"},{"id":17,"group":1,"content":"examples\/train\/ztrain\/features\/placeOrder[1:28]","start":1770197283053,"end":1770197283055,"title":"examples\/train\/ztrain\/features\/placeOrder[1:28] 10:28:03.053-10:28:03.055 registerUser","className":"failed"},{"id":18,"group":1,"content":"examples\/train\/ztrain\/features\/placeOrder[2:38]","start":1770197283063,"end":1770197283067,"title":"examples\/train\/ztrain\/features\/placeOrder[2:38] 10:28:03.063-10:28:03.067 Login User","className":"failed"},{"id":19,"group":1,"content":"examples\/train\/ztrain\/features\/placeOrder[3:49]","start":1770197283078,"end":1770197283084,"title":"examples\/train\/ztrain\/features\/placeOrder[3:49] 10:28:03.078-10:28:03.084 create a new product and add to cart","className":"failed"},{"id":20,"group":1,"content":"examples\/train\/ztrain\/features\/registerUser[1:23]","start":1770197283327,"end":1770197283337,"title":"examples\/train\/ztrain\/features\/registerUser[1:23] 10:28:03.327-10:28:03.337 registerUser","className":"failed"},{"id":21,"group":1,"content":"examples\/train\/ztrain\/test[1:9]","start":1770197278645,"end":1770197280787,"title":"examples\/train\/ztrain\/test[1:9] 10:27:58.645-10:28:00.787 test de connexion au site de Zenity"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

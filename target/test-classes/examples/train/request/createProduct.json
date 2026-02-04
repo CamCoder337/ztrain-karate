@@ -1,0 +1,23 @@
+{
+    "name": "Produit Test ",
+    "description": "Ceci est une description de test pour le produit. Elle doit faire au moins 100 caracteres pour etre valide par l API ZTrain. Voici plus de texte.",
+    "image": [
+        "https://image1.png",
+        "https://image2.png",
+        "https://image3.png"
+    ],
+    "price": 10,
+    "requestId": 12345,
+    "isActive": false,
+    "category": "625d70ef3f538325fe268e56",
+    "promotion": "6283b33d0effaba5dd6a94fc",
+    "attributs": {
+        "colors": [
+            "green"
+        ],
+        "height": [
+            "M",
+            "L"
+        ]
+    }
+}

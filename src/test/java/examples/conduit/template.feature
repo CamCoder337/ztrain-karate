@@ -31,7 +31,12 @@ Feature: Home Work
         * def favoritedArticles = articles.filter(article => article.favorited == true)
 
         # Step 7: Verify response schema
+        * def articleScheme = read('response/article-scheme.json').article
+        * match each favoritedArticles == articleScheme
+
         # Step 8: Verify that slug ID from Step 2 exist in one of the favorite articles
+        * def articleSlug = favoritedArticles[0].slug
+        * match articleSlug == slug
 
     # Scenario: Comment articles
     #     # Step 1: Get atricles of the global feed

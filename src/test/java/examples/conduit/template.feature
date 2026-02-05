@@ -5,8 +5,8 @@ Feature: Home Work
 
     Scenario: Favorite articles
         # Step 1: Get atricles of the global feed
-        * def articles = call read('get-article.feature')
-        * def articles = articles.response.articles
+        * def getArticles = call read('get-article.feature')
+        * def articles = getArticles.response.articles
 
         # Step 2: Get the favorites count and slug ID for the first arice, save it to variables
         * def firstArticle = articles[0]
@@ -33,25 +33,32 @@ Feature: Home Work
         * def favoritedArticles = articles.filter(article => article.favorited == true)
 
         # Step 7: Verify response schema
-        * def articleScheme = read('response/article-scheme.json').article
+        * def articleScheme = read('response/article-scheme.json').response.article
         * match each favoritedArticles == articleScheme
 
         # Step 8: Verify that slug ID from Step 2 exist in one of the favorite articles
         * def articleSlug = favoritedArticles[0].slug
         * match articleSlug == slug
 
-    # Scenario: Comment articles
-    #     # Step 1: Get atricles of the global feed
-    #     # Step 2: Get the slug ID for the first arice, save it to variable
-    #     # Step 3: Make a GET call to 'comments' end-point to get all comments
-    #     # Step 4: Verify response schema
-    #     # Step 5: Get the count of the comments array lentgh and save to variable
-    #         #Example
-    #         * def responseWithComments = [{"article": "first"}, {article: "second"}]
-    #         * def articlesCount = responseWithComments.length
-    #     # Step 6: Make a POST request to publish a new comment
-    #     # Step 7: Verify response schema that should contain posted comment text
-    #     # Step 8: Get the list of all comments for this article one more time
-    #     # Step 9: Verify number of comments increased by 1 (similar like we did with favorite counts)
-    #     # Step 10: Make a DELETE request to delete comment
-    #     # Step 11: Get all comments again and verify number of comments decreased by 1
+    Scenario: Comment articles
+        # Step 1: Get atricles of the global feed
+        * def getArticles = call read('get-article.feature')
+        * def articles = getArticles.response.articles
+
+        # Step 2: Get the slug ID for the first arice, save it to variable
+        * def firstArticle = articles[0]
+        * def slug = firstArticle.slug
+
+        # Step 3: Make a GET call to 'comments' end-point to get all comments
+        * def getComments = call read('get-comment.feature') { slug: "#(slug)" }
+        # Step 4: Verify response schema
+        # Step 5: Get the count of the comments array lentgh and save to variable
+            #Example
+            * def responseWithComments = [{"article": "first"}, {article: "second"}]
+            * def articlesCount = responseWithComments.length
+        # Step 6: Make a POST request to publish a new comment
+        # Step 7: Verify response schema that should contain posted comment text
+        # Step 8: Get the list of all comments for this article one more time
+        # Step 9: Verify number of comments increased by 1 (similar like we did with favorite counts)
+        # Step 10: Make a DELETE request to delete comment
+        # Step 11: Get all comments again and verify number of comments decreased by 1

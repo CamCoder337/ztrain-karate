@@ -1,3 +1,4 @@
+@ignore
 Feature: Recuperer les articles
     Background: Preconditions
         * url 'https://conduit-api.bondaracademy.com/api' 

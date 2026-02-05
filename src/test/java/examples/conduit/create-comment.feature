@@ -1,11 +1,12 @@
     @ignore
-Feature: Recuperer les Commentaires des articles 
+Feature: Creer un commentaire 
     Background: Preconditions
         * url conduit_api 
 
-    Scenario: Recuperer les Commentaires des articles 
+    Scenario: Creer un commentaire 
         Given path '/articles/' + slug + '/comments'
         * header Authorization = 'Token ' + token
-        When method GET
+        * request { "comment" : { "body" : "#(commentBody)" } }
+        When method POST
         Then status 200
         And print "On a recuperer des commentaires"

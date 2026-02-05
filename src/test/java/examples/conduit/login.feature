@@ -1,6 +1,7 @@
+@ignore
 Feature:LOGIN TO THE WEBSITEw
 Background:
-    * url 'https://conduit-api.bondaracademy.com/api/'
+    * url conduit_api
 
 Scenario: Login with valid credentials
     Given path 'users/login'

@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    conduit_api: 'https://conduit-api.bondaracademy.com/api'
   }
   if (env == 'dev') {
     // customize
